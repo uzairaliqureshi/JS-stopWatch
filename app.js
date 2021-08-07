@@ -1,5 +1,5 @@
 let play = document.getElementById("play");
-play.addEventListener("click", function () {
+play.addEventListener("click", () => {
     timeSince1970 = Date.now() - timeAfterStart;
     setInterVal = setInterval(() => {
         timeAfterStart = Date.now() - timeSince1970;
@@ -10,7 +10,7 @@ play.addEventListener("click", function () {
 });
 
 let pause = document.getElementById("pause");
-pause.addEventListener("click", function () {
+pause.addEventListener("click", () => {
     clearInterval(setInterVal)
     hidePause()
 });
@@ -19,6 +19,7 @@ document.getElementById("reset").addEventListener("click", () => {
     clearInterval(setInterVal);
     time1("00:00:00");
     timeAfterStart = 0;
+    hidePause()
 });
 
 let timeSince1970;
@@ -51,12 +52,19 @@ function time1(time) {
     document.getElementById("time").innerHTML = time;
 }
 
+let img1 = document.getElementById("img1")
+let img2 = document.getElementById("img2")
+
 function hidePlay() {
     play.style.display = "none"
     pause.style.display = "block"
+    img2.style.display = "none"
+    img1.style.display = "block"
 }
 
 function hidePause() {
     pause.style.display = "none"
     play.style.display = "block"
+    img1.style.display = "none"
+    img2.style.display = "block"
 }

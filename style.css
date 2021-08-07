@@ -18,6 +18,10 @@ h1{
     margin-top: 10px;
 }
 
+img{
+    height: 100px;
+}
+
 button{
     font-family: monospace;
     width: 10rem;
@@ -33,9 +37,13 @@ button{
 
 #time{
     font-size: 5rem;
-    margin: 5rem 0;
+    margin: 1rem 0 3rem;
 }
 
 #pause{
+    display: none;
+}
+
+#img1{
     display: none;
 }
