@@ -53,18 +53,16 @@ function time1(time) {
 }
 
 let img1 = document.getElementById("img1")
-let img2 = document.getElementById("img2")
+// let img2 = document.getElementById("img2")
 
 function hidePlay() {
     play.style.display = "none"
     pause.style.display = "block"
-    img2.style.display = "none"
-    img1.style.display = "block"
+    img1.style.visibility = "visible"
 }
 
 function hidePause() {
     pause.style.display = "none"
     play.style.display = "block"
-    img1.style.display = "none"
-    img2.style.display = "block"
+    img1.style.visibility = "hidden"
 }
