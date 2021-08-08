@@ -53,7 +53,6 @@ function time1(time) {
 }
 
 let img1 = document.getElementById("img1")
-// let img2 = document.getElementById("img2")
 
 function hidePlay() {
     play.style.display = "none"
