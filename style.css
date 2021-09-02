@@ -40,10 +40,10 @@ button{
     margin: 1rem 0 3rem;
 }
 
-#pause{
-    display: none;
-}
-
 #img1{
     visibility: hidden;
+}
+
+.hide{
+    display: none;
 }

@@ -55,13 +55,13 @@ function time1(time) {
 let img1 = document.getElementById("img1");
 
 function hidePlay() {
-    play.style.display = "none";
-    pause.style.display = "block";
+    play.classList.toggle('hide')
+    pause.classList.toggle('hide')
     img1.style.visibility = "visible";
 }
 
 function hidePause() {
-    pause.style.display = "none";
-    play.style.display = "block";
+    pause.classList.toggle('hide')
+    play.classList.toggle('hide')
     img1.style.visibility = "hidden";
 }
