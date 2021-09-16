@@ -1,49 +1,49 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    font-family: monospace;
-    height: 100%;
-    width: 100%;
-    background-color:  #2D2D2D;
-    color: darkgray;
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-family: monospace;
+  height: 100%;
+  width: 100%;
+  background-color: #2d2d2d;
+  color: darkgray;
 }
 
-h1{
-    margin-top: 10px;
+h1 {
+  margin-top: 10px;
 }
 
-img{
-    height: 100px;
+img {
+  height: 100px;
 }
 
-button{
-    font-family: monospace;
-    width: 10rem;
-    height: 50px;
-    border: none;
-    font-size: 1.2rem;
-    background-color: #2D2D2D;
-    border-radius: 7px;
-    margin: 2rem 0 0 0;
-    color: darkgray;
-    box-shadow: 5px 8px 8px -2px rgb(0 0 0 / 61%);
+button {
+  font-family: monospace;
+  width: 10rem;
+  height: 50px;
+  border: none;
+  font-size: 1.2rem;
+  background-color: #2d2d2d;
+  border-radius: 7px;
+  margin: 2rem 0 0 0;
+  color: darkgray;
+  box-shadow: 5px 8px 8px -2px rgb(0 0 0 / 61%);
 }
 
-#time{
-    font-size: 5rem;
-    margin: 1rem 0 3rem;
+#time {
+  font-size: 5rem;
+  margin: 1rem 0 3rem;
 }
 
-#img1{
-    visibility: hidden;
+.hideBtn {
+  display: none;
 }
 
-.hide{
-    display: none;
+.hideImg {
+  visibility: hidden;
 }

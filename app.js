@@ -1,67 +1,63 @@
-let play = document.getElementById("play");
+const img1 = document.getElementById("img1");
+const pause = document.getElementById("pause");
+const play = document.getElementById("play");
+
+const hidePause_Play_img = () => {
+    play.classList.toggle('hideBtn');
+    pause.classList.toggle('hideBtn');
+    img1.classList.toggle('hideImg');
+};
+
+const time1 = (time) => {
+    document.getElementById("time").innerHTML = time;
+};
+
+const timeCalculation = (time) => {
+    const hoursInPoint = time / 3600000;
+    const hour = Math.floor(hoursInPoint);
+
+    const minInPoint = (hoursInPoint - hour) * 60;
+    const minutes = Math.floor(minInPoint);
+
+
+    const secInPoint = (minInPoint - minutes) * 60;
+    const seconds = Math.floor(secInPoint);
+
+
+    const msInPoint = (secInPoint - seconds) * 100;
+    const ms = Math.floor(msInPoint);
+
+    const minPlus0 = minutes.toString().padStart(2, '0');
+    const secPlus0 = seconds.toString().padStart(2, '0');
+    const msPlus0 = ms.toString().padStart(2, '0');
+
+    return `${minPlus0}:${secPlus0}:${msPlus0}`;
+};
+
 play.addEventListener("click", () => {
     timeSince1970 = Date.now() - timeAfterStart;
     setInterVal = setInterval(() => {
         timeAfterStart = Date.now() - timeSince1970;
-        let time = timeCalculation(timeAfterStart);
+        const time = timeCalculation(timeAfterStart);
         time1(time);
     }, 10);
-    hidePlay();
+    hidePause_Play_img();
 });
 
-let pause = document.getElementById("pause");
 pause.addEventListener("click", () => {
     clearInterval(setInterVal);
-    hidePause();
+    hidePause_Play_img();
 });
 
 document.getElementById("reset").addEventListener("click", () => {
     clearInterval(setInterVal);
     time1("00:00:00");
     timeAfterStart = 0;
-    hidePause();
+    img1.classList.add('hideImg');
+    pause.classList.add('hideBtn');
+    play.classList.remove('hideBtn');
 });
 
 let timeSince1970;
 let timeAfterStart = 0;
 let setInterVal;
-
-function timeCalculation(time) {
-    let hoursInPoint = time / 3600000;
-    let hour = Math.floor(hoursInPoint);
-
-    let minInPoint = (hoursInPoint - hour) * 60;
-    let minutes = Math.floor(minInPoint);
-
-
-    let secInPoint = (minInPoint - minutes) * 60;
-    let seconds = Math.floor(secInPoint);
-
-
-    let msInPoint = (secInPoint - seconds) * 100;
-    let ms = Math.floor(msInPoint);
-
-    let minPlus0 = minutes.toString().padStart(2, '0');
-    let secPlus0 = seconds.toString().padStart(2, '0');
-    let msPlus0 = ms.toString().padStart(2, '0');
-
-    return `${minPlus0}:${secPlus0}:${msPlus0}`;
-}
-
-function time1(time) {
-    document.getElementById("time").innerHTML = time;
-}
-
-let img1 = document.getElementById("img1");
-
-function hidePlay() {
-    play.classList.toggle('hide')
-    pause.classList.toggle('hide')
-    img1.style.visibility = "visible";
-}
-
-function hidePause() {
-    pause.classList.toggle('hide')
-    play.classList.toggle('hide')
-    img1.style.visibility = "hidden";
-}
