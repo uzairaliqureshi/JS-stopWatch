@@ -1,6 +1,9 @@
 const img1 = document.getElementById("img1");
 const pause = document.getElementById("pause");
 const play = document.getElementById("play");
+let timeSince1970;
+let timeAfterStart = 0;
+let setInterVal;
 
 const hidePause_Play_img = () => {
     play.classList.toggle('hideBtn');
@@ -57,7 +60,3 @@ document.getElementById("reset").addEventListener("click", () => {
     pause.classList.add('hideBtn');
     play.classList.remove('hideBtn');
 });
-
-let timeSince1970;
-let timeAfterStart = 0;
-let setInterVal;
